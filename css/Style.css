@@ -1,0 +1,637 @@
+```css
+/* ========================================
+   1. RESET & GLOBAL STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background: #050505;
+    overflow-x: hidden;
+    line-height: 1.6;
+    
+
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ========================================
+   2. FIXED BACKGROUND
+======================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("../Image/slam-gym.jpg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   3. NAVBAR
+======================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+    padding: 18px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: rgba(0, 0, 0, 0.90);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    color: #ff3c00;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff3c00;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 11px 20px;
+
+    color: #ffffff;
+    background: #ff3c00;
+
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #ff5722;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   4. HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+}
+
+.welcome {
+    margin-bottom: 20px;
+
+    color: #ff3c00;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.hero h2 {
+    margin-top: 10px;
+
+    color: #ff3c00;
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin: 25px auto;
+
+    color: #dddddd;
+    font-size: 19px;
+}
+
+.join-button {
+    display: inline-block;
+    padding: 15px 35px;
+
+    color: #ffffff;
+    background: #ff3c00;
+
+    border-radius: 5px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.join-button:hover {
+    color: #ff3c00;
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   5. COMMON SECTION STYLES
+======================================== */
+
+.section {
+    min-height: 70vh;
+    padding: 100px 7%;
+}
+
+.section-title {
+    width: 100%;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.section-title p {
+    margin-bottom: 10px;
+
+    color: #ff3c00;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+.section-title h2 span {
+    color: #ff3c00;
+}
+
+
+/* ========================================
+   6. SERVICES SECTION
+======================================== */
+
+#services {
+    background: rgba(5, 5, 5, 0.65);
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.service-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: rgba(15, 15, 15, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    text-align: center;
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3c00;
+}
+
+.service-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.service-card h3 {
+    margin: 20px 10px 10px;
+
+    color: #ff3c00;
+    font-size: 20px;
+}
+
+.service-card p {
+    padding: 0 18px 24px;
+
+    color: #dddddd;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   7. ABOUT SECTION
+======================================== */
+
+.about {
+    background: rgba(5, 5, 5, 0.82);
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+
+    color: #dddddd;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   8. TESTIMONIALS
+======================================== */
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+
+    background: rgba(10, 10, 10, 0.86);
+}
+
+.testimonials .section-title {
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+}
+
+.testimonial-card {
+    flex: 1 1 280px;
+    max-width: 350px;
+    padding: 30px;
+
+    background: rgba(25, 25, 25, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3c00;
+}
+
+.stars {
+    margin-bottom: 20px;
+
+    color: #ff3c00;
+    font-size: 22px;
+}
+
+.testimonial-card p {
+    margin-bottom: 20px;
+    color: #dddddd;
+    font-size: 17px;
+}
+
+.testimonial-card h3 {
+    margin-bottom: 5px;
+}
+
+.testimonial-card small {
+    color: #aaaaaa;
+}
+
+
+/* ========================================
+   9. CONTACT SECTION
+======================================== */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(5, 5, 5, 0.88);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+
+    background: rgba(20, 20, 20, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+
+    color: #ffffff;
+    background: #111111;
+
+    border: 1px solid #444444;
+    border-radius: 5px;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff3c00;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 15px;
+
+    color: #ffffff;
+    background: #ff3c00;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #ff5722;
+}
+
+
+/* ========================================
+   10. FOOTER
+======================================== */
+
+footer {
+    padding: 50px 20px;
+
+    background: rgba(0, 0, 0, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+}
+
+footer > p {
+    margin: 15px 0;
+    color: #aaaaaa;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #dddddd;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff3c00;
+}
+
+.copyright {
+    font-size: 13px;
+}
+
+
+/* ========================================
+   11. TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 16px 4%;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ========================================
+   12. MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 650px) {
+    html {
+        scroll-padding-top: 130px;
+    }
+
+    .navbar {
+        padding: 14px 5px;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .nav-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 80px 18px;
+    }
+
+    .welcome {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 75px 5%;
+    }
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .service-image {
+        height: 220px;
+    }
+
+    .testimonial-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+}
+
+
+/* ========================================
+   13. SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image {
+        height: 240px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero h2 {
+        font-size: 29px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
